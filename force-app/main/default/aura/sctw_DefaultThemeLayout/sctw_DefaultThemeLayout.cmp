@@ -1,0 +1,20 @@
+<aura:component
+  implements="forceCommunity:themeLayout"
+  access="global"
+  description="TailwindCSS Default Theme Layout"
+>
+  <aura:attribute name="search" type="Aura.Component[]" required="false" />
+  <aura:attribute name="profileMenu" type="Aura.Component[]" required="false" />
+  <aura:attribute name="navBar" type="Aura.Component[]" required="false" />
+  <ltng:require
+    styles="{!$Resource.sctw_GlobalCommunityStyles + '/bin/global.css'}"
+  />
+  <div>
+    <header>
+      <div class="searchRegion">{!v.search}</div>
+      <div class="profileMenuRegion">{!v.profileMenu}</div>
+      <div class="navigation">{!v.navBar}</div>
+    </header>
+    <div class="container mx-auto">{!v.body}</div>
+  </div>
+</aura:component>
