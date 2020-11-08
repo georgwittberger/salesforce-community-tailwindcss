@@ -4,7 +4,6 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
     mode: 'layers',
     layers: ['base', 'components', 'utilities'],
     content: [

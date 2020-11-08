@@ -9,12 +9,12 @@
   <ltng:require
     styles="{!$Resource.sctw_GlobalCommunityStyles + '/bin/global.css'}"
   />
-  <div>
-    <header>
-      <div class="searchRegion">{!v.search}</div>
-      <div class="profileMenuRegion">{!v.profileMenu}</div>
-      <div class="navigation">{!v.navBar}</div>
+  <div class="container mx-auto">
+    <header class="flex flex-row">
+      <div class="flex-grow">{!v.navBar}</div>
+      <div class="w-1/5">{!v.search}</div>
+      <div class="w-1/5">{!v.profileMenu}</div>
     </header>
-    <div class="container mx-auto">{!v.body}</div>
+    <div>{!v.body}</div>
   </div>
 </aura:component>

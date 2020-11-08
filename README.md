@@ -1,6 +1,6 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Community Tailwind CSS Example
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+> Example SFDX project for using Tailwind CSS in a Salesforce Lightning Community
 
 ## How Do You Plan to Deploy Your Changes?
 
