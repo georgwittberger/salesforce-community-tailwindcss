@@ -1,0 +1,3 @@
+.sfdx/
+node_modules/
+**/lwc/jsconfig.json
