@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Typography */
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  @apply font-sans font-normal text-blue-800
+}
+
+body h1 {
+  @apply font-bold text-xl mt-6 mb-4
+}
+
+body h2 {
+  @apply font-bold text-lg mt-4 mb-2
+}
+
+body h3 {
+  @apply font-bold text-base mt-2 mb-1
+}
+
+body p {
+  @apply font-sans text-base mt-2 mb-0
+}
+
+/* Standard Content Layouts */
+
+.comm-layout-column.slds-col_padded,
+.comm-layout-column.slds-col--padded {
+  @apply p-4
+}
+
+/* Global Navigation Bar */
+
+header .forceCommunityGlobalNavigation {
+  @apply bg-transparent
+}
+
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button:focus,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button:hover,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button[disabled],
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:focus,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:hover {
+  @apply font-sans font-normal text-base text-blue-800 normal-case px-4 py-2
+}
+
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:hover,
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:focus {
+  @apply bg-transparent underline
+}
+
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button.slds-is-active:not([data-type="home"]),
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a.slds-is-active:not([data-type="home"]) {
+  @apply bg-transparent
+}
