@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>TailwindCSS Hero Teaser</masterLabel>
+    <description>Hero teaser for the TailwindCSS example</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+        name="title"
+        type="String"
+        default="Example Title"
+        label="Title"
+        description="Title of the teaser"
+      />
+            <property
+        name="text"
+        type="String"
+        default="Example teaser text"
+        label="Text"
+        description="Text of the teaser"
+      />
+            <property
+        name="ctaLabel"
+        type="String"
+        default="Take action now"
+        label="Call to Action Label"
+        description="Label of the call to action button"
+      />
+            <property
+        name="ctaTarget"
+        type="String"
+        default="Home"
+        label="Call to Action Target"
+        description="Page API name linked by the call to action button"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
