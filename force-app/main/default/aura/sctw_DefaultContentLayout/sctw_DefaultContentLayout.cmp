@@ -1,0 +1,12 @@
+<aura:component
+  implements="forceCommunity:layout"
+  access="global"
+  description="TailwindCSS Default Content Layout"
+>
+  <aura:attribute
+    name="content"
+    type="Aura.Component[]"
+    required="false"
+  ></aura:attribute>
+  {!v.content}
+</aura:component>
