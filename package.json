@@ -13,9 +13,13 @@
     "url": "https://github.com/georgwittberger/salesforce-community-tailwindcss.git"
   },
   "license": "MIT",
+  "config": {
+    "buildCssRoot": "./force-app/main/default/staticresources/sctw_GlobalCommunityStyles"
+  },
   "scripts": {
-    "build:css:dev": "cross-env NODE_ENV=development postcss force-app/main/default/staticresources/sctw_GlobalCommunityStyles/src/**/*.css --base force-app/main/default/staticresources/sctw_GlobalCommunityStyles/src --dir force-app/main/default/staticresources/sctw_GlobalCommunityStyles/bin",
-    "build:css:prod": "cross-env NODE_ENV=production postcss force-app/main/default/staticresources/sctw_GlobalCommunityStyles/src/**/*.css --base force-app/main/default/staticresources/sctw_GlobalCommunityStyles/src --dir force-app/main/default/staticresources/sctw_GlobalCommunityStyles/bin",
+    "build:css:dev": "cross-env NODE_ENV=development npm run build:css",
+    "build:css:prod": "cross-env NODE_ENV=production npm run build:css",
+    "build:css": "cross-env-shell \"postcss $npm_package_config_buildCssRoot/src/**/*.css --base $npm_package_config_buildCssRoot/src --dir $npm_package_config_buildCssRoot/bin\"",
     "lint": "npm run lint:lwc && npm run lint:aura",
     "lint:aura": "eslint **/aura/**",
     "lint:lwc": "eslint **/lwc/**",
