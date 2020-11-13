@@ -4,12 +4,16 @@
 
 /* Typography */
 
+body * {
+  @apply font-sans font-normal
+}
+
 body h1, body h2, body h3, body h4, body h5, body h6 {
-  @apply font-sans font-normal text-blue-800
+  @apply font-sans font-bold text-blue-800
 }
 
 body h1 {
-  @apply font-bold text-xl mt-6 mb-4
+  @apply font-bold text-xl mt-8 mb-4
 }
 
 body h2 {
@@ -17,11 +21,21 @@ body h2 {
 }
 
 body h3 {
-  @apply font-bold text-base mt-2 mb-1
+  @apply font-bold text-base mt-2 mb-0
 }
 
 body p {
   @apply font-sans text-base mt-2 mb-0
+}
+
+/* Links */
+
+body a {
+  @apply text-blue-800 no-underline
+}
+
+body a:active, body a:hover, body a:focus {
+  @apply text-blue-600 underline
 }
 
 /* Standard Content Layouts */
@@ -37,22 +51,32 @@ header .forceCommunityGlobalNavigation {
   @apply bg-transparent
 }
 
+header .forceCommunityGlobalNavigation .slds-list_vertical {
+  @apply bg-white
+}
+
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button,
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button:focus,
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button:hover,
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button[disabled],
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a,
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:focus,
-header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:hover {
+header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a {
   @apply font-sans font-normal text-base text-blue-800 normal-case px-4 py-2
 }
 
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:hover,
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:focus {
-  @apply bg-transparent underline
+  @apply bg-transparent text-blue-600 underline
 }
 
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button.slds-is-active:not([data-type="home"]),
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a.slds-is-active:not([data-type="home"]) {
   @apply bg-transparent
+}
+
+/* User Profile Menu */
+
+header .selfServiceUserProfileMenu .login a .linkLabel {
+  @apply font-sans font-normal text-base text-blue-800 normal-case
+}
+
+header .selfServiceUserProfileMenu .login a:hover .linkLabel,
+header .selfServiceUserProfileMenu .login a:focus .linkLabel {
+  @apply text-blue-600 underline
 }
