@@ -9,6 +9,7 @@
     - [Deploying the Project](#deploying-the-project)
     - [Setting Up a Community](#setting-up-a-community)
     - [Using TailwindCSS in Theme Layout](#using-tailwindcss-in-theme-layout)
+    - [Using TailwindCSS in Lightning Web Components](#using-tailwindcss-in-lightning-web-components)
     - [Overriding Style of Standard Components](#overriding-style-of-standard-components)
     - [Building an Optimized CSS File](#building-an-optimized-css-file)
     - [Customizing TailwindCSS](#customizing-tailwindcss)
@@ -40,8 +41,10 @@ sfdx force:source:deploy -p force-app
 1. Create a Lightning Community in Salesforce Setup using the _Build Your Own_ template.
 2. Open the Experience Builder for the community and change the _Default_ theme layout component to _TailwindCSS Default Theme Layout_.
 3. Adjust the theme layout properties as desired (e.g. enter a title).
-4. Perform additional configuration (e.g. set up members and public access, create navigation items).
-5. Activate and publish the community.
+4. Change the content layout of the home page to _TailwindCSS Default Content Layout_.
+5. Drag and drop TailwindCSS web components from the Components panel to the content region of the home page (e.g. _TailwindCSS Hero Teaser_).
+6. Perform additional configuration (e.g. set up members and public access, create navigation items).
+7. Activate and publish the community.
 
 ### Using TailwindCSS in Theme Layout
 
@@ -65,6 +68,29 @@ The template of the theme layout component can make use of the TailwindCSS class
 </aura:component>
 ```
 
+### Using TailwindCSS in Lightning Web Components
+
+Web components which are included in a page using the TailwindCSS theme layout can automatically access the style definitions provided by the global CSS file.
+
+The template of the web component can simply use the available TailwindCSS classes.
+
+```html
+<template>
+  <!-- Use TailwindCSS utility classes -->
+  <div class="container mx-auto mt-4 mb-8 px-4">
+    <h1 class="font-black text-5xl text-orange-800 leading-none mt-0 mb-4">
+      {title}
+    </h1>
+    <p class="text-xl text-orange-800 mt-0 mb-4">{text}</p>
+    <button
+      class="bg-orange-800 border-none rounded text-white text-xl px-4 py-2"
+    >
+      {label}
+    </button>
+  </div>
+</template>
+```
+
 ### Overriding Style of Standard Components
 
 Standard components like the global navigation bar, search field and user menu use the Salesforce Lightning Design System by default. They bring their own style definitions with some quite specific CSS selectors. Overriding the design of those components requires more specific selectors to be placed in the global CSS file. Then the TailwindCSS utility classes can be applied using the `@apply` directive.
@@ -77,19 +103,7 @@ header
   .comm-navigation__list
   .slds-list__item
   .comm-navigation__item
-  a,
-header
-  .forceCommunityGlobalNavigation
-  .comm-navigation__list
-  .slds-list__item
-  .comm-navigation__item
-  a:focus,
-header
-  .forceCommunityGlobalNavigation
-  .comm-navigation__list
-  .slds-list__item
-  .comm-navigation__item
-  a:hover {
+  a {
   /* Apply TailwindCSS utility classes */
   @apply font-sans font-normal text-base text-blue-800 normal-case px-4 py-2;
 }
@@ -123,6 +137,8 @@ npm run build:css:prod
 ```
 
 The TailwindCSS config file in this project is set up to look for CSS class usage in the HTML and JavaScript files of Aura Components and Lightning Web Components. Please read the [official optimization documentation](https://tailwindcss.com/docs/controlling-file-size) for instructions how to write HTML and JavaScript code which can be cleaned up properly.
+
+Remember to rebuild the production CSS file when the theme layout or web component templates have been changed. This is necessary because the HTML code may refer to CSS classes now which have been removed from the CSS file in the previous build.
 
 Note that the static resource must be deployed again after the CSS build has been completed.
 
