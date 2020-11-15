@@ -20,6 +20,7 @@
     "build:css:dev": "cross-env NODE_ENV=development npm run build:css",
     "build:css:prod": "cross-env NODE_ENV=production npm run build:css",
     "build:css": "cross-env-shell \"postcss $npm_package_config_buildCssRoot/src/**/*.css --base $npm_package_config_buildCssRoot/src --dir $npm_package_config_buildCssRoot/bin\"",
+    "deploy": "sfdx force:source:deploy -p ./force-app",
     "lint": "npm run lint:lwc && npm run lint:aura",
     "lint:aura": "eslint **/aura/**",
     "lint:lwc": "eslint **/lwc/**",
