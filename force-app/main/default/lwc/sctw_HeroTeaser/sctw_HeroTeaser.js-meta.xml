@@ -25,18 +25,32 @@
         description="Text of the teaser"
       />
             <property
-        name="ctaLabel"
+        name="primaryButtonLabel"
         type="String"
-        default="Take action now"
-        label="Call to Action Label"
-        description="Label of the call to action button"
+        default="Primary Label"
+        label="Primary Button Label"
+        description="Label of the primary button"
       />
             <property
-        name="ctaTarget"
+        name="primaryButtonTarget"
         type="String"
         default="Home"
-        label="Call to Action Target"
-        description="Page API name linked by the call to action button"
+        label="Primary Button Target"
+        description="Page API name linked by the primary button"
+      />
+            <property
+        name="secondaryButtonLabel"
+        type="String"
+        default="Secondary Label"
+        label="Secondary Button Label"
+        description="Label of the secondary button"
+      />
+            <property
+        name="secondaryButtonTarget"
+        type="String"
+        default="Home"
+        label="Secondary Button Target"
+        description="Page API name linked by the secondary button"
       />
         </targetConfig>
     </targetConfigs>

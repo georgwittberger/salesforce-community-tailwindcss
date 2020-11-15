@@ -2,17 +2,26 @@
   <div class="container mx-auto mt-4 mb-8 px-4">
     <h1
       if:true={title}
-      class="font-black text-5xl text-orange-800 leading-none mt-0 mb-4"
+      class="font-black text-5xl text-lwc-brand leading-none mt-0 mb-8"
     >
       {title}
     </h1>
-    <p if:true={text} class="text-xl text-orange-800 mt-0 mb-4">{text}</p>
+    <p if:true={text} class="text-xl text-lwc-brand mt-0 mb-8">{text}</p>
     <button
-      if:true={ctaTarget}
-      onclick={navigateToCtaTarget}
-      class="bg-orange-800 hover:bg-orange-600 focus:bg-orange-600 border-none rounded text-white text-xl px-4 py-2"
+      if:true={primaryButtonTarget}
+      onclick={navigateToPage}
+      data-target={primaryButtonTarget}
+      class="bg-lwc-link border-2 border-solid border-lwc-link rounded text-lwc-overlay text-xl mr-4 px-4 py-2"
     >
-      {ctaLabel}
+      {primaryButtonLabel}
+    </button>
+    <button
+      if:true={secondaryButtonTarget}
+      onclick={navigateToPage}
+      data-target={secondaryButtonTarget}
+      class="bg-lwc-overlay border-2 border-solid border-lwc-link rounded text-lwc-link text-xl px-4 py-2"
+    >
+      {secondaryButtonLabel}
     </button>
   </div>
 </template>

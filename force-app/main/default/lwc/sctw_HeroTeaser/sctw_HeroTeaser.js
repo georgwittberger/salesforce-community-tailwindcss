@@ -4,14 +4,16 @@ import { NavigationMixin } from 'lightning/navigation';
 export default class Sctw_HeroTeaser extends NavigationMixin(LightningElement) {
   @api title;
   @api text;
-  @api ctaLabel;
-  @api ctaTarget;
+  @api primaryButtonLabel;
+  @api primaryButtonTarget;
+  @api secondaryButtonLabel;
+  @api secondaryButtonTarget;
 
-  navigateToCtaTarget() {
+  navigateToPage(event) {
     this[NavigationMixin.Navigate]({
       type: 'comm__namedPage',
       attributes: {
-        name: this.ctaTarget
+        name: event.currentTarget.dataset.target
       }
     });
   }
