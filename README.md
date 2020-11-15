@@ -11,6 +11,7 @@
     - [Using TailwindCSS in Theme Layout](#using-tailwindcss-in-theme-layout)
     - [Using TailwindCSS in Lightning Web Components](#using-tailwindcss-in-lightning-web-components)
     - [Overriding Style of Standard Components](#overriding-style-of-standard-components)
+    - [Using Theme Colors and Fonts](#using-theme-colors-and-fonts)
     - [Building an Optimized CSS File](#building-an-optimized-css-file)
     - [Customizing TailwindCSS](#customizing-tailwindcss)
   - [License](#license)
@@ -22,9 +23,11 @@ This example project demonstrates how to customize the visual design of a [Sales
 ## Features
 
 1. Custom theme layout and static resource to integrate TailwindCSS as global CSS resource
-2. Build step to support TailwindCSS configuration and generate optimized CSS file
-3. Use TailwindCSS in theme layout and web components
-4. Use TailwindCSS to override style of standard layouts and components (e.g. global navigation bar)
+2. Custom Lightning Web Components for basic page sections
+3. Build step to support TailwindCSS configuration and generate optimized CSS file
+4. Use CSS utility classes in theme layout and web components
+5. Use CSS utility classes to override style of standard layouts and components (e.g. global navigation bar)
+6. Make community theme settings for colors and fonts accessible as CSS utility classes
 
 ## Getting Started
 
@@ -63,8 +66,10 @@ The template of the theme layout component can make use of the TailwindCSS class
     styles="{!$Resource.sctw_GlobalCommunityStyles + '/bin/global.css'}"
   />
 
-  <!-- Use TailwindCSS utility classes -->
-  <div class="container mx-auto md:my-4">...</div>
+  <div>
+    <!-- Use TailwindCSS utility classes -->
+    <header class="flex container mx-auto mt-4 mb-8 px-4">...</header>
+  </div>
 </aura:component>
 ```
 
@@ -78,15 +83,10 @@ The template of the web component can simply use the available TailwindCSS class
 <template>
   <!-- Use TailwindCSS utility classes -->
   <div class="container mx-auto mt-4 mb-8 px-4">
-    <h1 class="font-black text-5xl text-orange-800 leading-none mt-0 mb-4">
+    <h1 class="font-black text-5xl text-lwc-brand leading-none mt-0 mb-8">
       {title}
     </h1>
-    <p class="text-xl text-orange-800 mt-0 mb-4">{text}</p>
-    <button
-      class="bg-orange-800 border-none rounded text-white text-xl px-4 py-2"
-    >
-      {label}
-    </button>
+    <p class="text-xl text-lwc-brand mt-0 mb-8">{text}</p>
   </div>
 </template>
 ```
@@ -103,11 +103,25 @@ header
   .comm-navigation__list
   .slds-list__item
   .comm-navigation__item
-  a {
+  a,
+header
+  .forceCommunityGlobalNavigation
+  .comm-navigation__list
+  .slds-list__item
+  .comm-navigation__item
+  button {
   /* Apply TailwindCSS utility classes */
-  @apply font-sans font-normal text-base text-blue-800 normal-case px-4 py-2;
+  @apply font-primary font-normal text-base text-lwc-nav-text px-4 py-2;
 }
 ```
+
+### Using Theme Colors and Fonts
+
+The TailwindCSS config file `tailwind.config.js` is set up to extend to the default CSS classes with custom classes which use the CSS custom properties of Lightning Communities. This allows us to use the color and font settings from the Theme panel in Experience Builder.
+
+There is a set of custom color definitions which generates CSS classes to refer to color settings of the community. For example, the color `lwc-brand` refers to the active color of the community theme. An element can be assigned the CSS class `text-lwc-brand` to make its text appear in the active color or the CSS class `bg-lwc-brand` to set the background color to the active color of the community theme.
+
+There are also custom font definitions to refer to the primary font and header font of the community. For example, the font `header` refers the header font of the community theme. An element can be assigned the CSS class `font-header` to have its text rendered using the header font selected in the community theme.
 
 ### Building an Optimized CSS File
 
