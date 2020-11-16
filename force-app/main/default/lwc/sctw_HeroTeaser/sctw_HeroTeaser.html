@@ -1,12 +1,12 @@
 <template>
-  <div class="container mx-auto mt-4 mb-8 px-4">
+  <div class="container text-center mx-auto my-12 px-4">
     <h1
       if:true={title}
       class="font-black text-5xl text-lwc-brand leading-none mt-0 mb-8"
     >
       {title}
     </h1>
-    <p if:true={text} class="text-xl text-lwc-brand mt-0 mb-8">{text}</p>
+    <p if:true={text} class="text-xl my-8">{text}</p>
     <button
       if:true={primaryButtonTarget}
       onclick={navigateToPage}
