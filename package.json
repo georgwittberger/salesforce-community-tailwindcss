@@ -1,0 +1,19 @@
+{
+  "name": "salesforce-community-tailwindcss-pages",
+  "description": "GitHub pages of the example SFDX project for using Tailwind CSS in a Salesforce Lightning Community",
+  "version": "1.0.0",
+  "authors": {
+    "name": "Georg Wittberger",
+    "email": "georg.wittberger@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/georgwittberger/salesforce-community-tailwindcss.git",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "vuepress": "^1.7.1"
+  }
+}
