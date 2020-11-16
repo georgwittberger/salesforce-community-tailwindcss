@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/salesforce-community-tailwindcss/',
   dest: 'docs',
   title: 'Salesforce Community TailwindCSS Example',
   description:
