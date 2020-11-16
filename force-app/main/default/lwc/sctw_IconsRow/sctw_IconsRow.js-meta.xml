@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>TailwindCSS Icons Row</masterLabel>
+    <description>Icons row for the TailwindCSS example</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+        name="heading"
+        type="String"
+        default="Example Heading"
+        label="Heading"
+        description="Heading for the section"
+      />
+            <property
+        name="firstIcon"
+        type="String"
+        default="layout"
+        datasource="layout,package,sliders"
+        label="First Icon"
+        description="Icon for the first element"
+      />
+            <property
+        name="firstText"
+        type="String"
+        default="Example Text"
+        label="First Text"
+        description="Text for the first element"
+      />
+            <property
+        name="secondIcon"
+        type="String"
+        default="layout"
+        datasource="layout,package,sliders"
+        label="Second Icon"
+        description="Icon for the second element"
+      />
+            <property
+        name="secondText"
+        type="String"
+        default="Example Text"
+        label="Second Text"
+        description="Text for the second element"
+      />
+            <property
+        name="thirdIcon"
+        type="String"
+        default="layout"
+        datasource="layout,package,sliders"
+        label="Third Icon"
+        description="Icon for the third element"
+      />
+            <property
+        name="thirdText"
+        type="String"
+        default="Example Text"
+        label="Third Text"
+        description="Text for the third element"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
