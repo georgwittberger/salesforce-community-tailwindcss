@@ -61,7 +61,14 @@ header .forceCommunityGlobalNavigation .slds-p-vertical--xx-small.slds-p-horizon
 
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a,
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button {
-  @apply font-primary font-normal text-base text-lwc-nav-text px-4 py-2
+  @apply font-primary font-normal text-base text-lwc-nav-text px-4 py-4
+}
+
+@screen md {
+  header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a,
+  header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item button {
+    @apply py-2
+  }
 }
 
 header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .comm-navigation__item a:hover,
@@ -107,10 +114,30 @@ header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .uiInput .uiInp
 /* User Profile Menu */
 
 header .selfServiceUserProfileMenu .login a .linkLabel {
-  @apply font-primary font-normal text-base text-lwc-nav-text
+  @apply font-primary font-normal text-base text-right text-lwc-nav-text
 }
 
 header .selfServiceUserProfileMenu .login a:hover .linkLabel,
 header .selfServiceUserProfileMenu .login a:focus .linkLabel {
   @apply underline
+}
+
+header .selfServiceUserProfileMenu .selfServiceProfileMenuTrigger a.trigger-link {
+  @apply flex justify-end items-center font-primary font-normal text-base text-lwc-nav-text p-0
+}
+
+header .selfServiceUserProfileMenu .selfServiceProfileMenuTrigger a.trigger-link:focus {
+  @apply border-none shadow-none
+}
+
+header .selfServiceUserProfileMenu .selfServiceProfileMenuTrigger .profileIcon {
+  @apply flex-shrink-0
+}
+
+header .selfServiceUserProfileMenu .selfServiceProfileMenuTrigger .profileName {
+  @apply max-w-none font-normal text-base pl-2 pr-1
+}
+
+header .selfServiceUserProfileMenu .menuList .uiMenuItem {
+  @apply text-base
 }
