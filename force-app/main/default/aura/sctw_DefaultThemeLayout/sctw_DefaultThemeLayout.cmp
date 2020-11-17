@@ -13,7 +13,9 @@
   />
 
   <div>
-    <header class="flex container mx-auto mt-4 mb-8 px-4">
+    <header
+      class="flex flex-wrap md:flex-no-wrap container mx-auto mt-4 mb-12 px-4"
+    >
       <div class="flex-shrink-0 font-bold text-2xl text-lwc-brand mr-4">
         {!v.title}
       </div>
@@ -22,7 +24,11 @@
       >
         {!v.navBar}
       </div>
-      <div class="w-1/5 mr-4">{!v.search}</div>
+      <div
+        class="w-full md:w-1/5 mt-4 md:mt-0 md:mr-4 pl-10 md:pl-0 order-last md:order-none"
+      >
+        {!v.search}
+      </div>
       <div class="flex flex-col justify-center w-1/5">{!v.profileMenu}</div>
     </header>
     <div>{!v.body}</div>

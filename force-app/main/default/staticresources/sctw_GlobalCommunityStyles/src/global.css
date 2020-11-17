@@ -80,6 +80,30 @@ header .forceCommunityGlobalNavigation .comm-navigation__list .slds-list__item .
   @apply bg-lwc-nav-bg
 }
 
+/* Global Search Input */
+
+header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper {
+  @apply border-none rounded-none
+}
+
+header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper.focused {
+  @apply border-none shadow-none
+}
+
+header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .slds-input__icon.inputIcon {
+  @apply text-lwc-brand
+}
+
+header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .uiInput .uiInputTextForAutocomplete {
+  @apply text-base rounded-none transition-none;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+header .forceCommunityGlobalSearchInput .forceSearchInputDesktop .uiInput .uiInputTextForAutocomplete:focus {
+  @apply border-0 border-b-2 border-solid border-lwc-brand pb-0
+}
+
 /* User Profile Menu */
 
 header .selfServiceUserProfileMenu .login a .linkLabel {
