@@ -5,7 +5,7 @@ module.exports = {
   description:
     'Example SFDX project for using TailwindCSS in a Salesforce Lightning Community',
   head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'theme-color', content: '#5938a6' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     [
       'meta',
