@@ -12,15 +12,21 @@ The NPM package manifest file `package.json` in the project root directory actua
 
 ## PostCSS Configuration
 
-The additional configuration file `postcss.config.js` in the project root directory contains settings for the PostCSS utility which is used to convert the source CSS files into optimized CSS files used in the community pages.
+The additional configuration file `postcss.config.js` in the project root directory contains settings for the PostCSS utility which is used before deployment to convert the source CSS files into optimized CSS files.
+
+Read more about the [PostCSS build process](/concepts/#postcss-as-build-tool).
 
 ## TailwindCSS Configuration
 
 The additional configuration file `tailwind.config.js` in the project root directory contains settings for TailwindCSS which allows customization of colors, fonts, breakpoints and much more.
 
+Read more about the [TailwindCSS integration concept](/concepts/#tailwindcss-as-postcss-plugin).
+
 ## Static Resource for Global Styles
 
 The static resource `sctw_GlobalCommunityStyles` is the home of global CSS files. It contains two subdirectories `src` and `bin` containing the source files and the optimized files.
+
+Read more about the [reasons for two separate stylesheet directories](/concepts/#build-step-for-global-css-files).
 
 ## Aura Components
 
@@ -33,3 +39,5 @@ The Aura component `sctw_DefaultContentLayout` provides a lean content layout fo
 The Lightning Web Component `sctw_HeroTeaser` provides an example hero teaser with a big heading and call-to-action buttons. It is best used as the first section on a landing page.
 
 The Lightning Web Component `sctw_IconsRow` provides an example icons row with up to three icons displayed next to each other. It can be used to present features and benefits of a product or service.
+
+All these web components are configured to be exposed in Experience Builder. They can be dragged into community pages from the Components panel.
